@@ -13,6 +13,7 @@ import io.github.chrislo27.rhrefresh.sfxdb.BaseBpmRules
         JsonSubTypes.Type(EquidistantObject::class),
         JsonSubTypes.Type(KeepTheBeatObject::class),
         JsonSubTypes.Type(PatternObject::class),
+        JsonSubTypes.Type(MultiCueObject::class),
         JsonSubTypes.Type(RandomCueObject::class),
         JsonSubTypes.Type(EndRemixObject::class),
         JsonSubTypes.Type(SubtitleEntityObject::class),
@@ -197,6 +198,16 @@ class KeepTheBeatObject : NamedIDObject() {
 
 @JsonTypeName("pattern")
 class PatternObject : NamedIDObject() {
+
+    lateinit var cues: List<CuePointerObject>
+
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    var stretchable: Boolean = false
+
+}
+
+@JsonTypeName("multiCue")
+class MultiCueObject : NamedIDObject() {
 
     lateinit var cues: List<CuePointerObject>
 
