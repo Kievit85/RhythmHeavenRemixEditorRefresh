@@ -143,6 +143,8 @@ class CueObject : NamedIDObject() {
     var randomPitchLowCents: Int = 0
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     var randomPitchHighCents: Int = 0
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    var stopAtEnd: Boolean = false
     
     @Suppress("EqualsOrHashCode")
     class UseTimeStretchingValueFilter {
