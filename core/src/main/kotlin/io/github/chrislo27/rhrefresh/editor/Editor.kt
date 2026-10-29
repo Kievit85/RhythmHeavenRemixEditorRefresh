@@ -1653,7 +1653,7 @@ class Editor(val main: RHREfreshApplication, stageCamera: OrthographicCamera, at
             } else if (tool == Tool.MULTIPART_SPLIT) {
                 if (isDraggingButtonDown) {
                     val firstMultipart: MultipartEntity<*>? = getMultipartOnMouse()
-                    if (firstMultipart != null && firstMultipart !is MultiCueEntity) {
+                    if (firstMultipart != null && firstMultipart !is MultiCueEntity || firstMultipart?.canSplit == true) {
                         if (firstMultipart.canSplitWithoutColliding()) {
                             remix.mutate(firstMultipart.createSplittingAction())
                         }

@@ -209,10 +209,14 @@ class PatternObject : NamedIDObject() {
 @JsonTypeName("multiCue")
 class MultiCueObject : NamedIDObject() {
 
+    var width: Float = 0f
+
     lateinit var cues: List<CuePointerObject>
 
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     var stretchable: Boolean = false
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    var canSplit: Boolean = false
 
 }
 
